@@ -1,4 +1,4 @@
-package com.jd.kenan.spring.cloud.eureka.util;
+package com.jd.kenan.spring.cloud.eureka.server.util;
 
 import org.springframework.core.env.Environment;
 

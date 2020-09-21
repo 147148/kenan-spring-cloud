@@ -1,7 +1,7 @@
-package com.jd.kenan.spring.cloud.eureka.config;
+package com.jd.kenan.spring.cloud.eureka.client.config;
 
-import com.jd.kenan.spring.cloud.eureka.filter.CustomEurekaServerIpFilter;
-import com.jd.kenan.spring.cloud.eureka.util.EnvironmentUtil;
+import com.jd.kenan.spring.cloud.eureka.server.filter.CustomEurekaServerIpFilter;
+import com.jd.kenan.spring.cloud.eureka.server.util.EnvironmentUtil;
 import com.netflix.discovery.DiscoveryClient;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.context.EnvironmentAware;

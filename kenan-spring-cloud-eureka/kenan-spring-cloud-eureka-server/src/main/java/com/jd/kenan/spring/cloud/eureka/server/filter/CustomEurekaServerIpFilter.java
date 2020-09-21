@@ -1,6 +1,6 @@
-package com.jd.kenan.spring.cloud.eureka.filter;
+package com.jd.kenan.spring.cloud.eureka.server.filter;
 
-import com.jd.kenan.spring.cloud.eureka.util.EnvironmentUtil;
+import com.jd.kenan.spring.cloud.eureka.server.util.EnvironmentUtil;
 import com.sun.jersey.api.client.ClientHandlerException;
 import com.sun.jersey.api.client.ClientRequest;
 import com.sun.jersey.api.client.ClientResponse;

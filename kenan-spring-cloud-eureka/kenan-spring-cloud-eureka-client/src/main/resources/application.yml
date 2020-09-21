@@ -1,0 +1,27 @@
+#项目启动端口
+server:
+  port: 8372
+
+#项目名字
+spring:
+  application:
+    name: eureka-client
+  #登录注册eureka的用户名以及密码
+  security:
+    user:
+      name: admin
+      password: admin123
+
+#eureka相关配置
+eureka:
+  instance:
+    hostname: localhost
+    health-check-url-path: eureka/info
+    status-page-url-path: eureka/health
+  client:
+    healthcheck:
+      enabled: true
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:${server.port}/eureka/
