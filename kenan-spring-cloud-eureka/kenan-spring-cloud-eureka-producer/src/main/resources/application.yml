@@ -1,11 +1,11 @@
 #项目启动端口
 server:
-  port: 8373
+  port: 8372
 
 #项目名字
 spring:
   application:
-    name: eureka-client
+    name: eureka-producer
   #登录注册eureka的用户名以及密码
   security:
     user:

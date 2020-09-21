@@ -11,5 +11,16 @@
 
     <artifactId>kenan-spring-cloud-eureka-client</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.jd.kenan.cloud</groupId>
+            <artifactId>kenan-spring-cloud-core</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>

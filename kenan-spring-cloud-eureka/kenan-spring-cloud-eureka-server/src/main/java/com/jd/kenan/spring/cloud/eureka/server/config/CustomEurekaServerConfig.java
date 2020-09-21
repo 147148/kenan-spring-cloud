@@ -1,4 +1,4 @@
-package com.jd.kenan.spring.cloud.eureka.client.config;
+package com.jd.kenan.spring.cloud.eureka.server.config;
 
 import com.jd.kenan.spring.cloud.eureka.server.filter.CustomEurekaServerIpFilter;
 import com.jd.kenan.spring.cloud.eureka.server.util.EnvironmentUtil;
