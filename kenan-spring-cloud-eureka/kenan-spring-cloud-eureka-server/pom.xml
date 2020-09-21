@@ -12,11 +12,6 @@
     <artifactId>kenan-spring-cloud-eureka-server</artifactId>
 
     <dependencies>
-        <dependency>
-            <groupId>com.sun.jersey</groupId>
-            <artifactId>jersey-client</artifactId>
-            <version>1.19</version>
-        </dependency>
 
         <!--eureka server -->
         <dependency>

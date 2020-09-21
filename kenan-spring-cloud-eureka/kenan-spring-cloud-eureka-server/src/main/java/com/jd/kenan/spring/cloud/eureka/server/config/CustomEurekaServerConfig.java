@@ -1,9 +1,9 @@
 package com.jd.kenan.spring.cloud.eureka.server.config;
 
-import com.jd.kenan.spring.cloud.eureka.server.filter.CustomEurekaServerIpFilter;
+import com.jd.kenan.spring.cloud.eureka.server.filter.CustomEurekaServerAuthFilter;
 import com.jd.kenan.spring.cloud.eureka.server.util.EnvironmentUtil;
-import com.netflix.discovery.DiscoveryClient;
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.EnvironmentAware;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -12,24 +12,20 @@ import org.springframework.core.env.Environment;
 import org.springframework.lang.NonNull;
 import org.springframework.util.Assert;
 
-import java.util.Collections;
-
 @Configuration
 public class CustomEurekaServerConfig implements EnvironmentAware, InitializingBean {
 
     @Bean
     @Description("自定义身份验证filter")
-    public DiscoveryClient.DiscoveryClientOptionalArgs discoveryClientOptionalArgs() {
-
-        DiscoveryClient.DiscoveryClientOptionalArgs discoveryClientOptionalArgs = new DiscoveryClient.DiscoveryClientOptionalArgs();
-        discoveryClientOptionalArgs.setAdditionalFilters(Collections.singletonList(new CustomEurekaServerIpFilter()));
-        return discoveryClientOptionalArgs;
-
+    public FilterRegistrationBean<CustomEurekaServerAuthFilter> filterRegistrationBean() {
+        FilterRegistrationBean<CustomEurekaServerAuthFilter> registration = new FilterRegistrationBean<>(new CustomEurekaServerAuthFilter());
+        registration.addUrlPatterns("/*");
+        return registration;
     }
 
-    /**
-     * 设置环境变量
-     */
+        /**
+         * 设置环境变量
+         */
     @Override
     public void setEnvironment(@NonNull Environment environment) {
         EnvironmentUtil.setEnvironment(environment);
