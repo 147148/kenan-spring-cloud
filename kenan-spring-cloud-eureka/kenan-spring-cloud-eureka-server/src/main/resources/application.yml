@@ -25,3 +25,13 @@ eureka:
     fetch-registry: false
     service-url:
       defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:${server.port}/eureka/
+
+#业务所需的配置
+jd:
+  spring:
+    cloud:
+      eureka:
+        server:
+          filter:
+            host:
+              string: 127.1.1.1
