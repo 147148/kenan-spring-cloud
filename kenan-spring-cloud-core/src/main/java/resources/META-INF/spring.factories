@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.jd.kenan.spring.cloud.core.config.BaseConfig\
+  com.jd.kenan.spring.cloud.core.config.ApplicationStartSuccessListener\
+  com.jd.kenan.spring.cloud.core.config.ApplicationStartFailListener
