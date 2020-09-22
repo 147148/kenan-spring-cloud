@@ -12,12 +12,16 @@ spring:
       name: admin
       password: admin123
 
+#健康监控相关配置
+management:
+  endpoint:
+    health:
+      show-details: when_authorized
+
 #eureka相关配置
 eureka:
   instance:
     hostname: localhost
-    health-check-url-path: eureka/info
-    status-page-url-path: eureka/health
   client:
     healthcheck:
       enabled: true

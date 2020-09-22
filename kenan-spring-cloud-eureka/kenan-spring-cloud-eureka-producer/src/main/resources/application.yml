@@ -2,6 +2,12 @@
 server:
   port: 8372
 
+#健康监控相关配置
+management:
+  endpoint:
+    health:
+      show-details: when_authorized
+
 #项目名字
 spring:
   application:
@@ -16,8 +22,6 @@ spring:
 eureka:
   instance:
     hostname: localhost
-    health-check-url-path: eureka/info
-    status-page-url-path: eureka/health
   client:
     service-url:
       defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:8371/eureka/
