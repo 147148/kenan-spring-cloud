@@ -17,5 +17,11 @@
         <module>kenan-spring-cloud-eureka-producer</module>
     </modules>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.jd.kenan.cloud</groupId>
+            <artifactId>kenan-spring-cloud-core</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>

@@ -1,0 +1,62 @@
+#项目启动端口
+server:
+  port: 8375
+
+#健康监控相关配置
+management:
+  endpoint:
+    health:
+      show-details: when_authorized
+
+#项目名字
+spring:
+  application:
+    name: gateway-server
+  #登录注册eureka的用户名以及密码
+  security:
+    user:
+      name: admin
+      password: admin123
+  jmx:
+    enabled: false
+    cloud:
+      gateway:
+        default-filters:
+          - PrefixPath=/httpbin
+          - AddResponseHeader=X-Response-Default-Foo, Default-Bar
+
+        routes:
+          # =====================================
+          # to run server
+          # $ wscat --listen 9000
+          # to run client
+          # $ wscat --connect ws://localhost:8080/echo
+          - id: websocket_test
+            uri: ws://localhost:9000
+            order: 9000
+            predicates:
+              - Path=/echo
+          # =====================================
+          - id: default_path_to_httpbin
+            uri: ${test.uri}
+            order: 10000
+            predicates:
+              - Path=/**
+
+#eureka相关配置
+eureka:
+  instance:
+    hostname: localhost
+    lease-renewal-interval-in-seconds: 10
+  client:
+    service-url:
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:8371/eureka/
+    registry-fetch-interval-seconds: 5
+
+test:
+  #  hostport: httpbin.org:80
+  #  hostport: localhost:5000
+  #  uri: http://${test.hostport}
+  uri: lb://httpbin
+
+management.endpoints.web.exposure.include: '*'
