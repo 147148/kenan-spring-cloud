@@ -22,6 +22,8 @@ spring:
 eureka:
   instance:
     hostname: localhost
+    lease-renewal-interval-in-seconds: 10
   client:
     service-url:
       defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:8371/eureka/
+    registry-fetch-interval-seconds: 5

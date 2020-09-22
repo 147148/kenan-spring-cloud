@@ -1,6 +1,6 @@
 #项目启动端口
 server:
-  port: 8373
+  port: 8374
 
 #健康监控相关配置
 management:
@@ -11,7 +11,7 @@ management:
 #项目名字
 spring:
   application:
-    name: eureka-client
+    name: admin-server
   #登录注册eureka的用户名以及密码
   security:
     user:
@@ -23,6 +23,11 @@ eureka:
   instance:
     hostname: localhost
     lease-renewal-interval-in-seconds: 10
+    metadata-map:
+      user:
+        name: ${spring.security.user.name}
+        password: ${spring.security.user.password}
+
   client:
     service-url:
       defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:8371/eureka/

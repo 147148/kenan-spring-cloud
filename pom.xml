@@ -11,6 +11,7 @@
     <modules>
         <module>kenan-spring-cloud-eureka</module>
         <module>kenan-spring-cloud-core</module>
+        <module>kenan-spring-cloud-admin</module>
     </modules>
 
     <parent>
@@ -25,6 +26,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <spring.clould.version>Greenwich.RC1</spring.clould.version>
         <spring.boot.version>2.1.1.RELEASE</spring.boot.version>
+        <spring.boot.admin.version>2.1.5</spring.boot.admin.version>
     </properties>
 
     <dependencies>
@@ -55,6 +57,12 @@
 
     <dependencyManagement>
         <dependencies>
+
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-starter-server</artifactId>
+                <version>${spring.boot.admin.version}</version>
+            </dependency>
 
             <dependency>
                 <groupId>com.jd.kenan.cloud</groupId>
