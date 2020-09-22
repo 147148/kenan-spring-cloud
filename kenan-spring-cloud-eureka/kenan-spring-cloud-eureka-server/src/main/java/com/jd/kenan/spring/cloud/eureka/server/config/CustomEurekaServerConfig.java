@@ -23,9 +23,9 @@ public class CustomEurekaServerConfig implements EnvironmentAware, InitializingB
         return registration;
     }
 
-        /**
-         * 设置环境变量
-         */
+    /**
+     * 设置环境变量
+     */
     @Override
     public void setEnvironment(@NonNull Environment environment) {
         EnvironmentUtil.setEnvironment(environment);
