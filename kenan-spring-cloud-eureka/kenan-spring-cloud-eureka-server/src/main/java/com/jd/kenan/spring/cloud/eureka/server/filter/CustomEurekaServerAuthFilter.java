@@ -1,6 +1,8 @@
 package com.jd.kenan.spring.cloud.eureka.server.filter;
 
 
+import com.jd.kenan.spring.cloud.core.util.EnvironmentUtil;
+
 import javax.servlet.*;
 import java.io.IOException;
 
